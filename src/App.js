@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import './App.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +12,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Hello React App!</h1>
+        <Router>
+          <Navbar />
+          <h1>Hello React App!</h1>
+        </Router>
       </div>
     );
   }
