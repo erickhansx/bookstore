@@ -1,24 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import './App.scss';
+import Book from './components/Book';
+import BooksPage from './pages/BooksPage';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return (
+function App() {
+  return (
+    <Router>
       <div className="App">
-        <Router>
-          <Navbar />
-          <h1>Hello React App!</h1>
-        </Router>
+        <Navbar />
+        <Routes>
+          <Route path="/BooksPage" element={<BooksPage />} />
+        </Routes>
       </div>
-    );
-  }
+    </Router>
+  );
 }
 
 export default App;
