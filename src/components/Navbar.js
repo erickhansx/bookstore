@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className="navbar">
       <h1 className="navbar__h1">Bookstore CMS</h1>
       <NavLink to="/BooksPage">Books</NavLink>
-      <NavLink>Categories</NavLink>
+      <NavLink to="/CategoriesPage">Categories</NavLink>
     </div>
   );
 };

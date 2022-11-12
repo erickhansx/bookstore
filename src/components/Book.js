@@ -1,3 +1,5 @@
+import './Book.scss';
+
 const Book = (props) => {
   return (
     <div className="book">

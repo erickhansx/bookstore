@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import './App.scss';
 import Book from './components/Book';
 import BooksPage from './pages/BooksPage';
+import CategoriesPage from './pages/CategoriesPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/BooksPage" element={<BooksPage />} />
+          <Route path="/CategoriesPage" element={<CategoriesPage />} />
         </Routes>
       </div>
     </Router>
