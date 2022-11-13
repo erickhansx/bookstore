@@ -1,4 +1,4 @@
-//1) Import React and React-dom lib
+// 1) Import React and React-dom lib
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';

@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import './App.scss';
-import Book from './components/Book';
 import BooksPage from './pages/BooksPage';
 import CategoriesPage from './pages/CategoriesPage';
 
