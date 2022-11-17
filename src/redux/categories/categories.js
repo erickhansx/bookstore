@@ -17,10 +17,8 @@ const checkStatusReducer = (state = initialState, action) => {
 };
 
 // Action Creators.
-export const checkStatus = () => {
-  return {
-    type: CHECKSTATUS,
-  };
-};
+export const checkStatus = () => ({
+  type: CHECKSTATUS,
+});
 
 export default checkStatusReducer;
