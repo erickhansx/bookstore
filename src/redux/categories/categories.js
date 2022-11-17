@@ -22,3 +22,5 @@ export const checkStatus = () => {
     type: CHECKSTATUS,
   }
 };
+
+export default checkStatusReducer;
