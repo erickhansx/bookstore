@@ -5,13 +5,30 @@ const REMOVEBOOK = 'bookstore/src/redux/books/REMOVEBOOK';
 // Initial State.
 const initialState = [];
 const bookID = 0;
+const defaultBooks = [
+  {
+    genre: 'Action',
+    name: 'The Hunger Games',
+    author: 'Suzanne Collins',
+  },
+  {
+    genre: 'Action',
+    name: 'The Hunger Games',
+    author: 'Suzanne Collins',
+  },
+  {
+    genre: 'Action',
+    name: 'The Hunger Games',
+    author: 'Suzanne Collins',
+  },
+];
 
 // Reducer
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     default:
-      return state;
+      return defaultBooks;
 
     case ADDBOOK:
       return [...state, action.payload];
