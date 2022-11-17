@@ -7,20 +7,20 @@ const initialState = [];
 // Reducer.
 
 const checkStatusReducer = (state = initialState, action) => {
-  switch(action.type) {
-    default: 
-    return state;
+  switch (action.type) {
+    default:
+      return state;
 
     case CHECKSTATUS:
-      return 'Under construction',
+      return 'Under construction';
   }
-}
+};
 
 // Action Creators.
 export const checkStatus = () => {
   return {
     type: CHECKSTATUS,
-  }
+  };
 };
 
 export default checkStatusReducer;
