@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import './Book.scss';
 import { PropTypes } from 'prop-types';
-import { removeBook } from '../redux/books/books';
+import { removeBook, fetchBooks } from '../redux/books/books';
 
 const Book = ({
   genre, author, title, id,
@@ -9,7 +9,8 @@ const Book = ({
   const dispatch = useDispatch();
   const onClickRemove = () => {
     console.log('hello', id);
-    dispatch(removeBook({ id }));
+    dispatch(removeBook(id));
+    setTimeout(() => dispatch(fetchBooks()), 500);
   };
   return (
     <div className="book">
@@ -44,7 +45,7 @@ Book.propTypes = {
   title: PropTypes.string,
   author: PropTypes.string,
   genre: PropTypes.string,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 Book.defaultProps = {

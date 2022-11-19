@@ -1,60 +1,51 @@
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/gsPcb8D6x3QfolcShzQl/books/';
+
 // Action types.
-const ADDBOOK = 'bookstore/src/redux/books/ADDBOOK';
+const ADD_BOOK = 'bookstore/src/redux/books/ADDBOOK';
 const REMOVEBOOK = 'bookstore/src/redux/books/REMOVEBOOK';
 
 // Initial State.
 // const initialState = [];
-const defaultBooks = [
-  {
-    genre: 'Action',
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    id: 1,
-  },
-  {
-    genre: 'Action',
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    id: 2,
-  },
-  {
-    genre: 'Action',
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    id: 3,
-  },
-];
 
-// Reducer
+export const fetchBooks = createAsyncThunk('FETCH_BOOKS', () => axios.get(url).then((response) => {
+  const books = response.data;
+  const data = Object.keys(books).map((id) => ({
+    id,
+    title: books[id][0].title,
+    author: books[id][0].author,
+    category: books[id][0].category,
+  }));
+  return data;
+}));
 
-const booksReducer = (state = defaultBooks, action) => {
-  switch (action.type) {
-    default:
-      return state;
+const initialState = [];
 
-    case ADDBOOK:
-      return [...state, action.payload];
-
-    case REMOVEBOOK:
-      return state.filter((book) => book.id !== action.id);
-  }
-};
-
-// Action creators
-export const addBook = (payload) => ({
-  type: ADDBOOK,
-  payload: {
-    key: payload.id,
-    id: payload.id,
-    title: payload.title,
-    author: payload.author,
-    genre: payload.genre,
+const booksSlice = createSlice({
+  name: 'books',
+  initialState,
+  extraReducers: (builder) => {
+    builder.addCase(fetchBooks.fulfilled, (_, action) => action.payload);
   },
 });
 
-export const removeBook = (payload) => ({
-  type: REMOVEBOOK,
-  id: payload.id,
+// Reducer
+// Action creators
+export const addBook = createAsyncThunk(ADD_BOOK, (payload) => {
+  axios
+    .post(`${url}`, {
+      item_id: payload.id,
+      title: payload.title,
+      author: payload.author,
+      category: payload.genre,
+    })
+    .then((response) => response.data);
+});
+
+export const removeBook = createAsyncThunk(REMOVEBOOK, (id) => {
+  axios.delete(`${url}${id}`).then((response) => response.data);
 });
 
 // Selectors.
@@ -67,4 +58,4 @@ export const removeBook = (payload) => ({
 //   state.map((book) => console.log(book.title, book.author, book.genre));
 // };
 
-export default booksReducer;
+export default booksSlice.reducer;

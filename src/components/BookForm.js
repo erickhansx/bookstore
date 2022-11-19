@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBook, fetchBooks } from '../redux/books/books';
 import './BookForm.scss';
 
 const BookForm = () => {
@@ -27,6 +27,7 @@ const BookForm = () => {
         id,
       }),
     );
+    setTimeout(() => dispatch(fetchBooks()), 500);
   };
   return (
     <div className="book-form">
