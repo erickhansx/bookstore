@@ -8,17 +8,17 @@ const bookID = 0;
 const defaultBooks = [
   {
     genre: 'Action',
-    name: 'The Hunger Games',
+    title: 'The Hunger Games',
     author: 'Suzanne Collins',
   },
   {
     genre: 'Action',
-    name: 'The Hunger Games',
+    title: 'The Hunger Games',
     author: 'Suzanne Collins',
   },
   {
     genre: 'Action',
-    name: 'The Hunger Games',
+    title: 'The Hunger Games',
     author: 'Suzanne Collins',
   },
 ];
@@ -28,7 +28,7 @@ const defaultBooks = [
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     default:
-      return defaultBooks;
+      return [...state, defaultBooks];
 
     case ADDBOOK:
       return [...state, action.payload];
@@ -52,5 +52,15 @@ export const addBook = (payload) => ({
 export const removeBook = () => ({
   type: REMOVEBOOK,
 });
+
+// Selectors.
+
+export const selectBooks = (state) => {
+  console.log(state.map((book) => book.author));
+};
+
+export const selectDefaultBooks = (state) => {
+  state.map((book) => console.log(book.title, book.author, book.genre));
+};
 
 export default booksReducer;
