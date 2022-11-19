@@ -1,40 +1,55 @@
+import { useDispatch } from 'react-redux';
 import './Book.scss';
 import { PropTypes } from 'prop-types';
+import { removeBook } from '../redux/books/books';
 
-const Book = ({ genre, author, name }) => (
-  <div className="book">
-    <div className="book__main">
-      <span className="genre">{genre}</span>
-      <h2>{name}</h2>
-      <p>{author}</p>
-      <div className="book__btns">
-        <button type="button">Comments</button>
-        <button type="button">Remove</button>
-        <button type="button">Edit</button>
+const Book = ({
+  genre, author, title, id,
+}) => {
+  const dispatch = useDispatch();
+  const onClickRemove = () => {
+    dispatch(removeBook(id));
+    window.location.reload();
+    console.log('hellooooo');
+  };
+  return (
+    <div className="book">
+      <div className="book__main">
+        <span className="genre">{genre}</span>
+        <h2>{title}</h2>
+        <p>{author}</p>
+        <div className="book__btns">
+          <button type="button">Comments123</button>
+          <button onClick={onClickRemove} type="button">
+            Remove
+          </button>
+          <button type="button">Edit</button>
+        </div>
+      </div>
+      <div className="book__percentage">
+        <p>64%</p>
+        <p>Completed</p>
+      </div>
+      <div className="book__chapter">
+        <p className="current-chapter">Current Chapter</p>
+        <p className="chapter">Chapter 17</p>
+        <button type="button" className="update-progress">
+          UPDATE progress
+        </button>
       </div>
     </div>
-    <div className="book__percentage">
-      <p>64%</p>
-      <p>Completed</p>
-    </div>
-    <div className="book__chapter">
-      <p className="current-chapter">Current Chapter</p>
-      <p className="chapter">Chapter 17</p>
-      <button type="button" className="update-progress">
-        UPDATE progress
-      </button>
-    </div>
-  </div>
-);
+  );
+};
 
 Book.propTypes = {
-  name: PropTypes.string,
+  title: PropTypes.string,
   author: PropTypes.string,
   genre: PropTypes.string,
+  id: PropTypes.number.isRequired,
 };
 
 Book.defaultProps = {
-  name: '',
+  title: '',
   author: '',
   genre: '',
 };
