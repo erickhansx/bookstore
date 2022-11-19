@@ -4,14 +4,16 @@
   align-items: center;
 
   &__h1 {
-    font-size: 5rem;
+    font-size: 2.5rem;
+    color: #0290ff;
+    font-family: 'Montserrat';
   }
 
   :nth-child(2) {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 
   :nth-child(3) {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 }

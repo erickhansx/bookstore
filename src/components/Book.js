@@ -3,9 +3,7 @@ import './Book.scss';
 import { PropTypes } from 'prop-types';
 import { removeBook, fetchBooks } from '../redux/books/books';
 
-const Book = ({
-  genre, author, title, id,
-}) => {
+const Book = ({ genre, author, title, id }) => {
   const dispatch = useDispatch();
   const onClickRemove = () => {
     dispatch(removeBook(id));
