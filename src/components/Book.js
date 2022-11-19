@@ -8,9 +8,8 @@ const Book = ({
 }) => {
   const dispatch = useDispatch();
   const onClickRemove = () => {
-    dispatch(removeBook(id));
-    window.location.reload();
-    console.log('hellooooo');
+    console.log('hello', id);
+    dispatch(removeBook({ id }));
   };
   return (
     <div className="book">
@@ -19,8 +18,8 @@ const Book = ({
         <h2>{title}</h2>
         <p>{author}</p>
         <div className="book__btns">
-          <button type="button">Comments123</button>
-          <button onClick={onClickRemove} type="button">
+          <button type="button">Comments</button>
+          <button onClick={onClickRemove} id={id} type="button">
             Remove
           </button>
           <button type="button">Edit</button>

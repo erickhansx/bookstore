@@ -16,13 +16,15 @@ const BookForm = () => {
     console.log(author);
   };
 
+  const id = Math.random();
+
   const dispatchBook = () => {
     dispatch(
       addBook({
         title,
         author,
         genre: 'blah',
-        id: 4,
+        id,
       }),
     );
   };

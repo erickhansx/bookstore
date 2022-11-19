@@ -3,7 +3,7 @@ const ADDBOOK = 'bookstore/src/redux/books/ADDBOOK';
 const REMOVEBOOK = 'bookstore/src/redux/books/REMOVEBOOK';
 
 // Initial State.
-const initialState = [];
+// const initialState = [];
 const defaultBooks = [
   {
     genre: 'Action',
@@ -27,10 +27,10 @@ const defaultBooks = [
 
 // Reducer
 
-const booksReducer = (state = initialState, action) => {
+const booksReducer = (state = defaultBooks, action) => {
   switch (action.type) {
     default:
-      return defaultBooks;
+      return state;
 
     case ADDBOOK:
       return [...state, action.payload];
