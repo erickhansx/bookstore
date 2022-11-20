@@ -9,11 +9,9 @@ const BookForm = () => {
   const dispatch = useDispatch();
   const onChangeTitle = (e) => {
     setTitle(e.target.value);
-    console.log(title);
   };
   const onChangeAuthor = (e) => {
     setAuthor(e.target.value);
-    console.log(author);
   };
 
   const id = Math.random();

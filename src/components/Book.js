@@ -8,7 +8,6 @@ const Book = ({
 }) => {
   const dispatch = useDispatch();
   const onClickRemove = () => {
-    console.log('hello', id);
     dispatch(removeBook(id));
     setTimeout(() => dispatch(fetchBooks()), 500);
   };

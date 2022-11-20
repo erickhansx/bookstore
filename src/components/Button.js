@@ -9,10 +9,6 @@ const Button = () => {
     dispatch(checkStatus());
     event.currentTarget.classList.toggle('btn-off');
 
-    // API Call
-
-    // API ID : gsPcb8D6x3QfolcShzQl
-
     fetch(
       'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/gsPcb8D6x3QfolcShzQl/books',
       {
@@ -28,9 +24,7 @@ const Button = () => {
           'Content-type': 'application/json; charset=UTF-8',
         },
       },
-    )
-      .then((response) => response.text())
-      .then((json) => console.log(json));
+    ).then((response) => response.text());
   };
   return (
     <div className="big-container">
