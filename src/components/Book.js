@@ -26,14 +26,17 @@ const Book = ({
         </div>
       </div>
       <div className="book__percentage">
-        <p>64%</p>
-        <p>Completed</p>
+        <div className="circular-progress" />
+        <div>
+          <p className="book__percentage--number">64%</p>
+          <p className="book__percentage--text">Completed</p>
+        </div>
       </div>
       <div className="book__chapter">
         <p className="current-chapter">Current Chapter</p>
         <p className="chapter">Chapter 17</p>
         <button type="button" className="update-progress">
-          UPDATE progress
+          UPDATE PROGRESS
         </button>
       </div>
     </div>

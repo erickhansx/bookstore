@@ -1,12 +1,103 @@
+.books-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
 .book {
   display: flex;
   justify-content: space-between;
+  margin: 2rem 6rem;
+  align-items: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 5px;
 
   &__btns {
     button {
       border: none;
       background-color: #fff;
-      padding: 1rem;
+      padding: 1rem 2rem;
+      color: #4386bf;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
     }
   }
+
+  &__percentage {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+
+    &--text {
+      font-size: 1.8rem;
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    &--number {
+      font-size: 3rem;
+    }
+  }
+}
+
+.book__main {
+  max-width: 30%;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: #4386bf;
+    margin-bottom: 1rem;
+  }
+}
+
+.genre {
+  color: #e8e8e8;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.current-chapter {
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.chapter {
+  font-size: 1.8rem;
+}
+
+.update-progress {
+  background-color: #0290ff;
+  padding: 0.5rem 1.5rem;
+  color: #fff;
+  border: #60a7e6;
+}
+
+hr {
+  height: 1px;
+  background-color: black;
+  width: 90%;
+}
+
+.circular-progress {
+  border: 5px solid #307bbe;
+  border-left-color: #e8e8e8;
+  border-radius: 50%;
+  height: 4.25rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 4.25rem;
+}
+
+i {
+  color: #0290ff;
+  font-size: 2.5rem;
+  border: 1px solid #60a7e6;
+  padding: 0.5rem;
+  border-radius: 50px;
+  margin-right: 6rem;
 }

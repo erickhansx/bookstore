@@ -1,4 +1,25 @@
 .book-form {
   display: flex;
   flex-direction: column;
+  margin: 2rem 6rem;
+}
+
+.bookTitle {
+  width: 50%;
+  margin-right: 2rem;
+  min-height: 3rem;
+}
+
+.bookAuthor {
+  width: 30%;
+  margin-right: 2rem;
+  min-height: 3rem;
+}
+
+.addBook {
+  background-color: #0290ff;
+  width: 15%;
+  // padding: 0.5rem 3rem;
+  border: none;
+  min-height: 3rem;
 }

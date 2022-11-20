@@ -33,9 +33,19 @@ const BookForm = () => {
         <h2 className="book-form__header">ADD NEW BOOK</h2>
       </div>
       <div className="inputs">
-        <input onChange={onChangeTitle} type="text" placeholder="Book title" />
-        <input onChange={onChangeAuthor} type="text" placeholder="Author" />
-        <button onClick={dispatchBook} type="button">
+        <input
+          onChange={onChangeTitle}
+          className="bookTitle"
+          type="text"
+          placeholder="Book title"
+        />
+        <input
+          onChange={onChangeAuthor}
+          className="bookAuthor"
+          type="text"
+          placeholder="Author"
+        />
+        <button onClick={dispatchBook} className="addBook" type="button">
           ADD BOOK
         </button>
       </div>
