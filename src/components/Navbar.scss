@@ -1,8 +1,7 @@
 .navbar {
   display: flex;
-  gap: 2.5rem;
   align-items: center;
-  margin: 4rem 6rem;
+  justify-content: space-between;
 
   &__h1 {
     font-size: 3rem;
@@ -17,4 +16,11 @@
   :nth-child(3) {
     font-size: 1.8rem;
   }
+}
+
+.left {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  margin: 4rem 6rem;
 }
