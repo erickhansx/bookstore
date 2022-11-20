@@ -3,7 +3,9 @@ import './Book.scss';
 import { PropTypes } from 'prop-types';
 import { removeBook, fetchBooks } from '../redux/books/books';
 
-const Book = ({ genre, author, title, id }) => {
+const Book = ({
+  genre, author, title, id,
+}) => {
   const dispatch = useDispatch();
   const onClickRemove = () => {
     dispatch(removeBook(id));
@@ -24,14 +26,14 @@ const Book = ({ genre, author, title, id }) => {
         </div>
       </div>
       <div className="book__percentage">
-        <p>64%</p>
-        <p>Completed</p>
+        <p className="book__percentage--number">64%</p>
+        <p className="book__percentage--text">Completed</p>
       </div>
       <div className="book__chapter">
         <p className="current-chapter">Current Chapter</p>
         <p className="chapter">Chapter 17</p>
         <button type="button" className="update-progress">
-          UPDATE progress
+          UPDATE PROGRESS
         </button>
       </div>
     </div>
