@@ -1,10 +1,6 @@
-// Action Types.
 const CHECKSTATUS = 'bookstore/src/redux/categories/CHECKSTATUS';
 
-// Initial state.
 const initialState = [];
-
-// Reducer.
 
 const checkStatusReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,7 +12,6 @@ const checkStatusReducer = (state = initialState, action) => {
   }
 };
 
-// Action Creators.
 export const checkStatus = () => ({
   type: CHECKSTATUS,
 });

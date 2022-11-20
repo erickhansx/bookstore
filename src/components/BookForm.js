@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBook, fetchBooks } from '../redux/books/books';
 import './BookForm.scss';
 
 const BookForm = () => {
@@ -9,12 +9,12 @@ const BookForm = () => {
   const dispatch = useDispatch();
   const onChangeTitle = (e) => {
     setTitle(e.target.value);
-    console.log(title);
   };
   const onChangeAuthor = (e) => {
     setAuthor(e.target.value);
-    console.log(author);
   };
+
+  const id = Math.random();
 
   const dispatchBook = () => {
     dispatch(
@@ -22,9 +22,10 @@ const BookForm = () => {
         title,
         author,
         genre: 'blah',
-        id: 4,
+        id,
       }),
     );
+    setTimeout(() => dispatch(fetchBooks()), 500);
   };
   return (
     <div className="book-form">
